@@ -8,6 +8,3 @@ dependencies = [
     "httpx>=0.28.1",
     "mcp[cli]>=1.10.1",
 ]
-
-[project.scripts]
-piston_mcp = "piston_mcp.server:main"
