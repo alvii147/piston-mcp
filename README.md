@@ -20,7 +20,7 @@
 
 You can try out *piston-mcp* locally without cloning it.
 
-### :one: Install [uv](https://github.com/astral-sh/uv)
+### Install [uv](https://github.com/astral-sh/uv)
 
 To try out *piston-mcp* you'll need to install `uv`:
 
@@ -31,11 +31,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### :two: Install MCP Client
+### Install MCP Client
 
 You will also need to download an MCP client to connect to *piston-mcp*, such as [Claude Desktop](https://claude.ai/download).
 
-### :three: Update MCP Client Configuration
+### Update MCP Client Configuration
 
 Update the MCP client's configuration with the following configuration to connect to *piston-mcp*:
 
