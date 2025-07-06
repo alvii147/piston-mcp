@@ -26,15 +26,20 @@ class File:
     encoding: str | None
 
 
-class ExecuteDetailedResults(NamedTuple):
+class ExecuteStageResults(NamedTuple):
     """
-    Detailed results on execute requests.
+    Results on a particular stage on execute requests.
     """
     stdout: str
     stderr: str
     output: str
     code: int | None
     signal: str | None
+    message: str | None
+    status: str | None
+    cpu_time: int | None
+    wall_time: int | None
+    memory: int | None
 
 
 class ExecuteResults(NamedTuple):
@@ -43,8 +48,8 @@ class ExecuteResults(NamedTuple):
     """
     language: str
     version: str
-    compile: ExecuteDetailedResults | None
-    run: ExecuteDetailedResults
+    compile: ExecuteStageResults | None
+    run: ExecuteStageResults
 
 
 class PistonClient:
