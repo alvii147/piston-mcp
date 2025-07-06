@@ -1,10 +1,13 @@
 [project]
 name = "piston-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "MCP server that allows LLMs to connect to and execute code using Piston"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "httpx>=0.28.1",
     "mcp[cli]>=1.10.1",
 ]
+
+[project.scripts]
+server = "piston-mcp.server:main"

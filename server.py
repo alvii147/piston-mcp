@@ -70,5 +70,9 @@ async def run_code(language: str, code: str) -> str:
     return output
 
 
-if __name__ == "__main__":
+def main():
     mcp.run(transport='stdio')
+
+
+if __name__ == "__main__":
+    main()
