@@ -12,6 +12,7 @@ class Runtime(NamedTuple):
     """
     Runtime that can be executed.
     """
+
     language: str
     version: str
     aliases: list[str]
@@ -21,6 +22,7 @@ class File:
     """
     File that can be submitted in execute requests.
     """
+
     name: str | None
     content: str
     encoding: str | None
@@ -30,6 +32,7 @@ class ExecuteStageResults(NamedTuple):
     """
     Results on a particular stage on execute requests.
     """
+
     stdout: str
     stderr: str
     output: str
@@ -46,6 +49,7 @@ class ExecuteResults(NamedTuple):
     """
     Results on execute requests.
     """
+
     language: str
     version: str
     compile: ExecuteStageResults | None
@@ -80,6 +84,7 @@ class PistonClient:
     client: httpx.AsyncClient
         HTTP client used for making asynchronous requests.
     """
+
     def __init__(
         self,
         runtimes_url: str = DEFAULT_RUNTIMES_URL,
@@ -173,7 +178,7 @@ class PistonClient:
                 raise ValueError('No content in file')
 
             validated_file = {
-                'content': file['content']
+                'content': file['content'],
             }
 
             if 'name' in file:

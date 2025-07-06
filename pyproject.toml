@@ -11,3 +11,11 @@ dependencies = [
 
 [project.scripts]
 piston_mcp = "piston_mcp.server:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.2",
+]
+
+[tool.ruff.format]
+quote-style = "single"
