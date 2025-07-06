@@ -43,4 +43,4 @@ jobs:
 
     - name: Run Tests
       run: |
-        uv run unittest discover -s src -v
+        uv run -m unittest discover -s src -v
