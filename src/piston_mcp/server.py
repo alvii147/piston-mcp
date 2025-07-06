@@ -1,5 +1,6 @@
 from mcp.server.fastmcp import FastMCP
-from .api import PistonClient
+
+from piston_mcp.api import PistonClient
 
 
 mcp = FastMCP('piston')
@@ -23,47 +24,46 @@ async def run_code(language: str, code: str) -> str:
     str
         Output of code execution.
     """
-    client = PistonClient()
+    async with PistonClient() as client:
+        # get runtimes
+        try:
+            runtimes_response = await client.runtimes()
+        except Exception as e:
+            return f'ERROR: failed to get runtimes.\n{repr(e)}'
 
-    # get runtimes
-    try:
-        runtimes_response = await client.runtimes()
-    except Exception as e:
-        return f'ERROR: failed to get runtimes.\n{repr(e)}'
+        language = language.lower()
+        version = None
 
-    language = language.lower()
-    version = None
+        # iterate over runtimes and find version for given language
+        for runtime in runtimes_response:
+            if 'version' not in runtime:
+                continue
 
-    # iterate over runtimes and find version for given language
-    for runtime in runtimes_response:
-        if 'version' not in runtime:
-            continue
+            if 'language' in runtime and runtime['language'] == language:
+                version = runtime['version']
+                break
 
-        if 'language' in runtime and runtime['language'] == language:
-            version = runtime['version']
-            break
+            if 'aliases' in runtime and language in runtime['aliases']:
+                version = runtime['version']
+                break
 
-        if 'aliases' in runtime and language in runtime['aliases']:
-            version = runtime['version']
-            break
+        # if version is not found, then the language is not supported
+        if version is None:
+            return 'ERROR: invalid language.'
 
-    # if version is not found, then the language is not supported
-    if version is None:
-        return 'ERROR: invalid language.'
-
-    # execute code using language and version
-    try:
-        execute_response = await client.execute(
-            language=language,
-            version=version,
-            files=[
-                {
-                    'content': code,
-                },
-            ],
-        )
-    except Exception as e:
-        return f'ERROR: failed to execute code.\n{repr(e)}'
+        # execute code using language and version
+        try:
+            execute_response = await client.execute(
+                language=language,
+                version=version,
+                files=[
+                    {
+                        'content': code,
+                    },
+                ],
+            )
+        except Exception as e:
+            return f'ERROR: failed to execute code.\n{repr(e)}'
 
     output = execute_response.get('run', {}).get('output', '')
 
