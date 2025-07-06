@@ -10,4 +10,4 @@ dependencies = [
 ]
 
 [project.scripts]
-pistonmcp = "pistonmcp:server:main"
+pistonmcp = "pistonmcp.server:main"
