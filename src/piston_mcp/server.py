@@ -28,8 +28,8 @@ async def run_code(language: str, code: str) -> str:
     # get runtimes
     try:
         runtimes_response = await client.runtimes()
-    except Exception:
-        return 'ERROR: failed to get runtimes.'
+    except Exception as e:
+        return f'ERROR: failed to get runtimes.\n{repr(e)}'
 
     language = language.lower()
     version = None
@@ -62,8 +62,8 @@ async def run_code(language: str, code: str) -> str:
                 },
             ],
         )
-    except Exception:
-        return 'ERROR: failed to execute code.'
+    except Exception as e:
+        return f'ERROR: failed to execute code.\n{repr(e)}'
 
     output = execute_response.get('run', {}).get('output', '')
 
