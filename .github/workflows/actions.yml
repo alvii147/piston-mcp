@@ -25,3 +25,22 @@ jobs:
     - name: Run Linter
       run: |
         uv run ruff format --check
+
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    - name: Set up Python
+      run: |
+        uv python install
+
+    - name: Run Tests
+      run: |
+        uv run unittest discover -s src -v
