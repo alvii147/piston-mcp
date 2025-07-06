@@ -60,7 +60,7 @@ For Claude Desktop, the configuration file is usually found in:
 
 ```bash
 # On MacOS and Linux
-`~/Library/Application\ Support/Claude/claude_desktop_config.json`
+~/Library/Application\ Support/Claude/claude_desktop_config.json
 # On Windows
 %APPDATA%\Claude\claude_desktop_config.json
 ```
@@ -74,4 +74,4 @@ Once you've followed the steps above, your MCP client should be able to run code
 ## Acknowledgements
 
 * [Piston](https://github.com/engineer-man/piston)
-* [Claude](https://claude.ai/)
+* [Claude.ai](https://claude.ai/)
