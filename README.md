@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Piston Logo" src="https://github.com/engineer-man/piston/blob/master/var/docs/images/piston.svg" width=350 />
+    <img alt="Piston Logo" src="https://github.com/engineer-man/piston/blob/master/var/docs/images/piston.svg" width=150 />
 </p>
 
 <h1 align="center">
