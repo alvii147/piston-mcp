@@ -67,13 +67,7 @@ For Claude Desktop, the configuration file is usually found in:
 
 ## Usage
 
-Once you've followed the steps above, your MCP client should successfully connect to *piston-mcp* and `piston` should show up as an available MCP server that offers the tool, `run_code`:
-
-![Claude MCP Servers](docs/img/ClaudeMCPServers.png)
-
-![Claude Run Code](docs/img/ClaudeRunCode.png)
-
-Your MCP client should then be able to run code for you:
+Once you've followed the steps above, your MCP client should be able to run code for you:
 
 ![Claude Demo](docs/img/ClaudeDemo.png)
 
