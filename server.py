@@ -1,5 +1,5 @@
 from mcp.server.fastmcp import FastMCP
-from .api import PistonClient
+from api import PistonClient
 
 
 mcp = FastMCP('piston')
