@@ -12,7 +12,7 @@
 
 <div align="center">
 
-[![Tests](https://img.shields.io/github/actions/workflow/status/alvii147/piston-mcp/github-ci.yml?branch=main&label=tests&logo=github)](https://github.com/alvii147/piston-mcp/actions) [![License](https://img.shields.io/github/license/alvii147/piston-mcp)](https://github.com/alvii147/piston-mcp/blob/main/LICENSE)
+[![Tests](https://img.shields.io/github/actions/workflow/status/alvii147/piston-mcp/actions.yml?branch=main&label=tests&logo=github)](https://github.com/alvii147/piston-mcp/actions) [![License](https://img.shields.io/github/license/alvii147/piston-mcp)](https://github.com/alvii147/piston-mcp/blob/main/LICENSE)
 
 </div>
 
