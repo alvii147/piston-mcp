@@ -16,6 +16,9 @@
 
 </div>
 
+> [!WARNING]
+> As of Feb 15, 2026, [Piston API](https://github.com/engineer-man/piston) is no longer publicly available and requires an authorization token. This means *piston-mcp* will no longer work with the publicly hosted instance of Piston.
+
 ## Installation
 
 You can try out *piston-mcp* locally without cloning it.
